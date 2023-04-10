@@ -17,8 +17,9 @@ var character: Character = "A" // 16비트 유니코드 문자열
 var string = "문자열" // 타입 추론 가능
 
 typealias myType = String // 타입 별칭 가능
-
+var myString: myType = "helloWorld"
 var numberString: String = "1"
 var numberToString = Int(numberString) // 타입 변환 가능
 
-
+var tuplesData: (String, Int) = ("나는", 10)
+print("\(tuplesData.0) \(tuplesData.1)대이고 싶어")
