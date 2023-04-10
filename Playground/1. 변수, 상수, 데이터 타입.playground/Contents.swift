@@ -1,7 +1,7 @@
 import UIKit
 
-var str1: String = "hello world"
-let str2: String = "hello world"
+var str1: String = "hello world" // 변수
+let str2: String = "hello world" // 상수
 
 str1 = "My Playground"
 //str2 = "My Playground" // 상수 변경 불가
