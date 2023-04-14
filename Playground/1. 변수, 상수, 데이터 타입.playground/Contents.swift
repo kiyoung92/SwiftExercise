@@ -22,4 +22,4 @@ var numberString: String = "1"
 var numberToString = Int(numberString) // 타입 변환 가능
 
 var tuplesData: (String, Int) = ("나는", 10)
-print("\(tuplesData.0) \(tuplesData.1)대이고 싶어")
+print("\(tuplesData.0) \(tuplesData.1)대이고 싶어ㅎㅅㅎ")
