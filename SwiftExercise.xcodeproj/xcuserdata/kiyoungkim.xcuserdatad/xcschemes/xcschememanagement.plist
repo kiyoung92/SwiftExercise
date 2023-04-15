@@ -151,6 +151,27 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
+		<key>8. 옵셔널 (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>8. 옵셔널 (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>8. 옵셔널 (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
 		<key>SwiftExercise.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
