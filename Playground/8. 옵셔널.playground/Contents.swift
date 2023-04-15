@@ -39,3 +39,5 @@ userMade?.methodTest()
 
 let iuotype: String! = userMade?.name
 print(iuotype ?? "이름 없음")
+
+// 옵셔널에 대해서는 조금 더 알아볼 필요가 있음
