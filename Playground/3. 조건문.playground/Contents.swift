@@ -38,3 +38,10 @@ case let num where num % 2 == 0:
 default:
     print("홀수")
 }
+
+func guardFunction(isChecked: String) -> Bool {
+    guard isChecked == "Y" else { return false }
+    return true
+}
+
+let checked: Bool = guardFunction(isChecked: "Y")
