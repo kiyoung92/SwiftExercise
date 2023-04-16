@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // 값이 없음. 즉, nil을 처리해주기 위한 타입
 func optionalTest(name: String?, age: Int?) -> (String?, Int?){

@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // for
 for i in 1...10 {

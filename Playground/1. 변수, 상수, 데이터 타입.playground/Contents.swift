@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 var str1: String = "hello world" // 변수
 let str2: String = "hello world" // 상수

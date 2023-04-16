@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 var num1: Int = 10
 var num2: Int = 10

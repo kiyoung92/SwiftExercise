@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // 연관된 데이터를 저장할 때 사용
 let (name, age, addr) = ("Kiyoung", 32, "Seoul")

@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 func testFns(name: String, age: Int) {
     print("\(name), \(age)")

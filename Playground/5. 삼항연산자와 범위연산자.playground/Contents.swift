@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 // 삼항연산자
 let checkbox: Bool = false
