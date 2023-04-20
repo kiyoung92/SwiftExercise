@@ -122,3 +122,69 @@ var p: BmiCheck = BmiCheck(name: "kiyoung", height: 180, weight: 80)
 p.bmi
 p.bmi = 23.6915
 p.weight
+
+
+class TypeProperties {
+    // 저장 타입 속성 (기본적으로 지연 속성) 초기화 필수
+    static var addr: String = "Seoul"
+    static var count: Int = 0
+    
+    // 계산 타입 속성 (readOnly)
+    static var calcType: Int {
+        return count * 2
+    }
+    
+    // 저장 속성
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+        TypeProperties.count += 1
+    }
+    
+    static func typeMethod() -> String {
+        return "helloWorld"
+    }
+}
+
+var seoulPerson: TypeProperties = TypeProperties(name: "seoulName", age: 111)
+var seoulPerson2: TypeProperties = TypeProperties(name: "seoulName", age: 111)
+TypeProperties.addr
+
+TypeProperties.count
+TypeProperties.calcType
+TypeProperties.typeMethod()
+
+// Property Observer
+class MyMessage {
+    var name: String
+    // lazy (지연저장속성)는 불가
+    var changeMessage: String = "Default Message" {
+        // 값이 바뀌기 전에 호출
+        willSet {
+            print("'\(changeMessage)'에서 '\(newValue)'로 변경될 예정입니다.")
+        }
+        
+        // 값이 바뀐 후 호출
+        didSet {
+            print("'\(oldValue)'에서 '\(changeMessage)' 로 변경되었습니다.")
+        }
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+let m: MyMessage = MyMessage(name: "kiyoung")
+m.changeMessage
+m.changeMessage = "안녕하세요"
+m.changeMessage = "안녕히계세요"
+
+
+
+
+// Method
+
