@@ -186,5 +186,134 @@ m.changeMessage = "안녕히계세요"
 
 
 
-// Method
+// Class Instance Method
+class AppUser {
+    static var userName: String = "기영"
+    var name: String
+    var taxType: String
+    var totalPrice: Double
+    
+    init(name: String, taxType: String, totalPrice: Double){
+        self.name = name
+        self.taxType = taxType
+        self.totalPrice = totalPrice
+    }
+    
+    func showTax() {
+        print("\(name)님이 납부하실 세금은 \(Int(totalPrice * 0.1))원 입니다.")
+    }
+    
+    // 오버로딩이 가능함
+    func showTax(a: String) {
+        print("실행\(a)")
+    }
+    
+    func changeTaxType(newType taxType: String) {
+        self.taxType = taxType
+    }
+    
+    // 타입 메서드, 타입 속성에 접근 가능
+    static func typeMethod() {
+        print("hello \(userName)")
+    }
+    
+    // 상속 가능
+    class func extendsMethod() {
+        print("부모의 메서드")
+    }
+}
+AppUser.extendsMethod()
+class ExtendsAppUser: AppUser {
+    // 부모의 메서드를 재정의 가능
+    override class func extendsMethod() {
+        print("자식에서 변경")
+    }
+}
+ExtendsAppUser.extendsMethod()
 
+
+var taxUser: AppUser = AppUser(name: "기영", taxType: "일반과세자", totalPrice: 900000000)
+taxUser.showTax()
+
+
+
+// Struct Instance Method
+struct AppUser2 {
+    static var userName: String = "기영"
+    var name: String
+    var taxType: String
+    var totalPrice: Double
+    
+    init(name: String, taxType: String, totalPrice: Double){
+        self.name = name
+        self.taxType = taxType
+        self.totalPrice = totalPrice
+    }
+    
+    func showTax() {
+        print("\(name)님의 세금은 \(Int(totalPrice * 0.1))원 입니다.")
+    }
+    
+    // 오버로딩이 가능함
+    func showTax(a: String) {
+        print("실행\(a)")
+    }
+    
+    // 구조체 메서드 내에서는 속성 값을 수정할 수 없음. 수정하려면 mutating 키워드를 써야함.
+    mutating func changeTaxType(newType taxType: String) {
+        self.taxType = taxType
+    }
+    
+    // 타입 메서드, 타입 속성에 접근 가능
+    static func typeMethod() {
+        print("hello \(userName)")
+    }
+}
+
+AppUser.typeMethod()
+
+// SubScript Method
+class subscriptMethod {
+    var arr = ["hello", "World", "안녕", "안녕하세요"]
+    
+    // get-only 가능
+    subscript(idx: Int) -> String {
+        get {
+            return arr[idx]
+        }
+        set {
+            arr[idx] = newValue
+        }
+    }
+}
+var data: subscriptMethod = subscriptMethod()
+data[0]
+data[0] = "iOS"
+data[0]
+
+struct subscriptMethod2 {
+    var arr = [[1,2,3], [4,5,6], [7,8,9]]
+    
+    subscript(x: Int, y: Int) -> Int? {
+        if x >= 3 || y >= 3 {
+            return nil
+        }
+        return arr[x][y]
+    }
+}
+var subTest: subscriptMethod2 = subscriptMethod2()
+if let result = subTest[1, 1] {
+    print(result)
+}
+
+
+enum Users: Int {
+    case user = 1, kiyoung, person1, person2
+    
+    static subscript(n: Int) -> Users {
+        return Users(rawValue: n)!
+    }
+}
+
+let newUser: Users = Users[1]
+print(newUser)
