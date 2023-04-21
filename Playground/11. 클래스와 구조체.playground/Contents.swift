@@ -317,3 +317,43 @@ enum Users: Int {
 
 let newUser: Users = Users[1]
 print(newUser)
+
+
+// 접근 제어 (은닉화)
+class SomeClass {
+    private var name: String = "kiyoung"
+    
+    func nameChange(name: String) {
+        self.name = name
+    }
+    
+    func getName() -> String {
+        return self.name
+    }
+}
+
+var someTest: SomeClass = SomeClass()
+//someTest.name // 외부에서 접근 불가능
+someTest.nameChange(name: "길동이") // 메서드를 이용하여 접근 가능
+someTest.getName() // 메서드를 이용하여 접근 가능
+
+
+// 싱글톤 패턴
+class Singleton {
+    // 전역변수로 선언
+    static let shared = Singleton()
+    var userCorpNo: Int = 12312312
+    
+    // 또 다른 객체에서 생성을 금지
+    private init() {}
+}
+
+print(Singleton.shared) // 메모리 주소
+let obj: Singleton = Singleton.shared
+print(obj) // 같은 메모리 주소
+obj.userCorpNo = 555555
+
+let changedObj: Singleton = Singleton.shared
+print(changedObj.userCorpNo) // 55555, 유일한 객체이기 때문에 메모리 주소에 할당된 변수 값이 바뀜
+
+//let newObj: Singleton = Singleton() // 은닉화를 했기 때문에 새로 생성이 불가능
