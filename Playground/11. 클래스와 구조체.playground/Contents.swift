@@ -357,3 +357,107 @@ let changedObj: Singleton = Singleton.shared
 print(changedObj.userCorpNo) // 55555, 유일한 객체이기 때문에 메모리 주소에 할당된 변수 값이 바뀜
 
 //let newObj: Singleton = Singleton() // 은닉화를 했기 때문에 새로 생성이 불가능
+
+
+// 클래스 상속
+class UserUUID {
+    var id: String = "UUID12345"
+}
+
+class UserInfo2: UserUUID {
+    var username: String = "kiyoung"
+    var birth: Int = 1992
+}
+
+// 상속이 불가능한 클래스 final class
+final class NotExtendsClass {
+    var name: String = "kiyoung"
+}
+
+//class ExtendsClass: NotExtendsClass {
+//    var age: Int = 32
+//}
+
+
+// 상속된 클래스의 메서드는 재정의 가능
+class TestClass1 {
+    var userName: String = "kiyoung"
+    func testFunc() {
+        print("This is testFunc")
+    }
+}
+
+class TestClass2: TestClass1 {
+    // 저장 속성의 재정의는 불가능 하지만 메서드 형태로는 재정의 가능
+    override var userName: String {
+        get {
+            return "helloKiyoung"
+        }
+        set {
+            super.userName = newValue
+        }
+    }
+    
+    override func testFunc() {
+        // 부모 클래스 testFunc 실행
+        super.testFunc()
+        print("change testFunc")
+    }
+}
+
+var test1: TestClass2 = TestClass2()
+test1.testFunc()
+
+
+
+
+
+// 구조체는 기본 생성자 따로 생성하지 않아도 생성됌
+struct InitializerTest {
+    var name: String
+    var age: Int
+    var addr: String
+}
+var initTest: InitializerTest = InitializerTest(name: "kiyoung", age: 32, addr: "seoul")
+
+
+// 구조체의 생성자
+struct InitTest {
+    var a: String
+    var b: String
+    var c: String
+ 
+    // 구조체에서는 지정 생성자
+    init() {
+        self.init(a: "a", b: "b", c: "c")
+    }
+    
+    init(a: String) {
+        self.init(a: a, b: "b", c: "c")
+    }
+    
+    init(a: String, b: String, c: String) {
+        self.a = a
+        self.b = b
+        self.c = c
+    }
+}
+
+// 클래스의 생성자
+class InitTest2 {
+    var a: String
+    var b: String
+    var c: String
+    // 지정 생성자
+    init(a: String, b: String, c: String) {
+        self.a = a
+        self.b = b
+        self.c = c
+    }
+    
+    // 편의 기본 생성자 (상속을 하면서 인스턴스를 만들 때 편하게 만들 수 있도록 사용)
+    // 다른 생성자를 호출할 때는 convenience 키워드 필수
+    convenience init() {
+        self.init(a: "a", b: "b", c: "c")
+    }
+}
