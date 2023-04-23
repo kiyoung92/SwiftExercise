@@ -455,6 +455,10 @@ class InitTest2 {
         self.c = c
     }
     
+    convenience init(a: String) {
+        self.init(a: a, b: a, c: a)
+    }
+    
     // 편의 기본 생성자 (상속을 하면서 인스턴스를 만들 때 편하게 만들 수 있도록 사용)
     // 다른 생성자를 호출할 때는 convenience 키워드 필수
     convenience init() {
