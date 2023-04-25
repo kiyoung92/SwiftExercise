@@ -461,6 +461,7 @@ class InitTest2 {
     
     // 편의 기본 생성자 (상속을 하면서 인스턴스를 만들 때 편하게 만들 수 있도록 사용)
     // 다른 생성자를 호출할 때는 convenience 키워드 필수
+    // 이 키워드는 다시 한번 생각해보자
     convenience init() {
         self.init(a: "a", b: "b", c: "c")
     }
