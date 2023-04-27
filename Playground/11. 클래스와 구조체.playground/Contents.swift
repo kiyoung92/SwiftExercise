@@ -461,8 +461,22 @@ class InitTest2 {
     
     // 편의 기본 생성자 (상속을 하면서 인스턴스를 만들 때 편하게 만들 수 있도록 사용)
     // 다른 생성자를 호출할 때는 convenience 키워드 필수
-    // 이 키워드는 다시 한번 생각해보자
+    // 편의 생성자는 상속이 되지 않음
     convenience init() {
         self.init(a: "a", b: "b", c: "c")
+    }
+}
+
+class InitTest3: InitTest2 {
+    var d: String
+    
+    init(a: String, b: String, c: String, d: String) {
+        self.d = d
+        
+        super.init(a: a, b: b, c: c)
+    }
+    
+    convenience init(d: String) {
+        self.init(a: "a", b: "b", c: "c", d: d)
     }
 }
