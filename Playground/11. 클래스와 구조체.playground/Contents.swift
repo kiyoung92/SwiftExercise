@@ -473,6 +473,7 @@ class InitTest3: InitTest2 {
     init(a: String, b: String, c: String, d: String) {
         self.d = d
         
+        // 내부에서 반드시 상위의 생성자를 호출을 해야함
         super.init(a: a, b: b, c: c)
     }
     
