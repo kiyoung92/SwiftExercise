@@ -481,3 +481,24 @@ class InitTest3: InitTest2 {
         self.init(a: "a", b: "b", c: "c", d: d)
     }
 }
+
+
+// 필수 생성자
+class ParnetClass {
+    var x: Int
+    
+    // 하위 클래스에서 반드시 생성자를 구현해야함
+    required init (x: Int) {
+        self.x = x
+    }
+}
+
+class ChildClass: ParnetClass {
+    init(y: Int) {
+        super.init(x: 0)
+    }
+    
+    required init(x: Int) {
+        super.init(x: x)
+    }
+}
