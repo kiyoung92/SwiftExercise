@@ -35,6 +35,7 @@
 		6FF2B9C229EB29BB0068076A /* 9. 컬렉션.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "9. 컬렉션.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6FF2B9C329EC38A10068076A /* 10. 열거형.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "10. 열거형.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6FF2B9C429EE8B4A0068076A /* 11. 클래스와 구조체.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "11. 클래스와 구조체.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6FF2B9C529FFFE0B0068076A /* 13. 타입캐스팅.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "13. 타입캐스팅.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 				6FF2B9C229EB29BB0068076A /* 9. 컬렉션.playground */,
 				6FF2B9C329EC38A10068076A /* 10. 열거형.playground */,
 				6FF2B9C429EE8B4A0068076A /* 11. 클래스와 구조체.playground */,
+				6FF2B9C529FFFE0B0068076A /* 13. 타입캐스팅.playground */,
 			);
 			path = Playground;
 			sourceTree = "<group>";

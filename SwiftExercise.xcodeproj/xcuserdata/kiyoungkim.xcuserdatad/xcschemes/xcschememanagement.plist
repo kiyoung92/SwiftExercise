@@ -67,6 +67,27 @@
 			<key>orderHint</key>
 			<integer>29</integer>
 		</dict>
+		<key>13. 타입캐스팅 (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>33</integer>
+		</dict>
+		<key>13. 타입캐스팅 (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>34</integer>
+		</dict>
+		<key>13. 타입캐스팅 (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>32</integer>
+		</dict>
 		<key>2. 기본 연산자 (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>

@@ -551,3 +551,21 @@ class FailedChilde: FailedParent {
 //        super.init()
 //    }
 }
+
+
+
+// 소멸자 (클래스에서만 존재)
+class DeinitClass {
+    var a: Int = 0
+    var b: Int = 0
+    
+    deinit {
+        print("Deinitialers")
+    }
+}
+
+
+var de: DeinitClass? = DeinitClass()
+
+// 인스턴스가 소멸되는 시점
+de = nil
