@@ -502,3 +502,52 @@ class ChildClass: ParnetClass {
         super.init(x: x)
     }
 }
+
+// 실패 가능 생성자
+struct People {
+    var name: String
+    
+    // 실패 가능 생성자
+    init?(name: String) {
+        if name.isEmpty {
+            return nil
+        }
+        
+        self.name = name
+    }
+}
+var peopleTest: People? = People(name: "kiyoung")
+
+
+enum TestEnum: String {
+    case A
+    case B
+    case C
+    
+}
+let aa: TestEnum? = TestEnum(rawValue: "A")
+let bb: TestEnum? = TestEnum(rawValue: "D") // nil
+
+class FailedParent {
+    var a: String = "a"
+    var b: String = "b"
+    var c: String = "c"
+    
+    init()  {  }
+//    init?() { }
+}
+
+class FailedChilde: FailedParent {
+    var d: String = "d"
+    
+//    실패 가능 생성자에서 실패 불가능 생성자 호출은 가능
+    init?(d: String) {
+        super.init()
+        self.d = d
+    }
+    
+//    실패 불가능 생성자에서 실패 가능 생성자 호출은 불가능 (범위)
+//    override init() {
+//        super.init()
+//    }
+}
