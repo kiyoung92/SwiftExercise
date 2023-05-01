@@ -86,3 +86,65 @@ let people: [Person] = [Person(), Student(), High()]
 for person in people {
     person.test()
 }
+
+
+
+
+
+
+
+
+
+// Any 타입
+var str: Any = "Swift"
+//str.count  Any타입에는 .count가 없음
+
+// 타입 캐스팅
+var str1 = str as! String
+str1.count
+(str as! String).count
+if let s = str as? String {
+    s.count
+}
+
+let arr: [Any] = [1, 1.1, true, Person(), "A"]
+
+for i in arr {
+    if let x = i as? String {
+        print(x)
+    }
+}
+
+
+
+// AnyObject 타입 : 클래스의 인스턴스만 담을 수 있음
+let arr2: [AnyObject] = [Person(), Student(), High()]
+for i in arr2 {
+    if let x = i as? Student {
+        print(x)
+    }
+}
+
+
+for (idx, item) in arr.enumerated() {
+    switch item {
+    case is Int:
+        print("\(idx)번째 타입은 정수입니다.")
+    case let num as Double:
+        print("\(idx)번째 값은 \(num)")
+    case let person as Person:
+        person.test()
+    default:
+        print("그 이외의 값입니다")
+    }
+}
+
+
+
+
+
+// 옵셔널 값을 Any타입으로 변환
+
+let optionalNum: Int? = 3
+print(optionalNum)              // 경고창
+print(optionalNum as Any)       // 경고 없음
