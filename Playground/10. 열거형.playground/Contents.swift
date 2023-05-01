@@ -88,7 +88,7 @@ if case let x? = num {
 switch userType {
 case .normal:
     print("일반고객")
-// 열겨형의 모든 케이스를 다루지 않음을 경고로 알려주는 키워드 @unknown
+// 열겨형의 모든 케이스를 다루지 않음을 경고로 알려주는 키워드
 @unknown default:
     print("helloWorld")
 }
