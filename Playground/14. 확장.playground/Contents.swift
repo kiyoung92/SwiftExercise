@@ -44,3 +44,75 @@ extension Int {
     }
 }
 6.sq
+
+
+
+
+// 확장에서의 생성자
+// 클래스
+var color: UIColor = UIColor(red: 0.3, green: 0.5, blue: 0.4, alpha: 1)
+
+extension UIColor {
+    // 클래스에서는 편의 생성자만 가능
+    convenience init(color: CGFloat) {
+        self.init(red: color/255, green: color/255, blue: color/255, alpha: color/255)
+    }
+}
+
+
+// 구조체
+struct Test {
+    var x: Double
+    var y: Double
+    
+    init(x: Double, y: Double) {
+        self.x = x
+        self.y = y
+    }
+}
+
+extension Test {
+    init() {
+        self.init(x: 0.1, y: 0.5)
+    }
+}
+
+let test01: Test = Test()
+print(test01)
+
+
+
+// 서브 스크립트의 확장
+extension Int {
+    subscript(num: Int) -> Int {
+        var base = 1
+        for _ in 0 ..< num {
+            base *= 10
+        }
+        return (self / base) % 10
+    }
+}
+123123123[0]
+
+
+// 중첩타입의 확장
+
+extension Int {
+    enum Kind {
+        case negative, zero, positive
+    }
+    
+    var kind: Kind {
+        switch self {
+        case 0:
+            return Kind.zero
+        case let x where x > 0:
+            return Kind.positive
+        default:
+            return Kind.negative
+        }
+    }
+}
+
+let num = 10
+num.kind
