@@ -139,3 +139,48 @@ enum SwitchTest: Togglable {
 var sw: SwitchTest = SwitchTest.on
 sw.toggle()
 sw.toggle()
+
+
+
+// 프로토콜에서의 생성자
+protocol InitPro {
+    init(num: Int)
+}
+
+// final class 는 하위 클래스를 상속할 수 없기 때문에 required 키워드 필요 ㄴㄴ
+class TestClass: InitPro {
+    // 상속될 클래스에 필수로 상속
+    required init(num: Int) {
+        
+    }
+}
+
+class TestClass02: InitPro {
+//    편의 생성자도 사용 가능
+    convenience required init(num: Int) {
+        self.init()
+    }
+    
+    init() {}
+}
+
+class ChildClass: TestClass {
+    // 자동 상속
+}
+
+
+// 실패 가능 생성자
+protocol FailTest {
+    init?(num: Int)
+}
+
+class FailClass: FailTest {
+    required init!(num: Int) {}
+}
+
+struct FailStruct: FailTest {
+//    모두 가능
+//    init?(num: Int) {}
+//    init(num: Int) {}
+    init!(num: Int) {}
+}
